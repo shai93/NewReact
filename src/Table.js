@@ -11,12 +11,13 @@ class Table extends Component {
         let custombody = this.props.custombody;
         let headObj = this.props.headObj;
         let { handleAction } = this.props;
+        let {alertName} = this.props;
 
 
         return (
             <table>
                 <Thead headObj={headObj} />
-                <Tbody custombody={custombody} handleAction={handleAction} />
+                <Tbody custombody={custombody} handleAction={handleAction} alertName={alertName} />
             </table>
         )
     }
