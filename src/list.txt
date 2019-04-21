@@ -1,0 +1,28 @@
+import React, { Component } from 'react';
+import './App.css';
+import Islogged from './components/login/Islogged';
+
+
+class App extends Component {
+
+  render(){
+    let colors=["Blue","Red","Black"]
+
+    return(
+      <div>
+        <ul>
+          {
+          colors.map((item, index)=>{
+            return <li key={Math.random()}>{item}</li>
+          })
+          }
+        </ul>
+      </div>
+    )
+  }
+  
+    
+  
+}
+
+export default App;
