@@ -1,8 +1,10 @@
 import React from 'react';
 import Loginuser from './Loginuser';
 import Guestuser from './Guestuser';
-import LogoutButton from '../loginbuttons/logoutbutton'
-import LoginButton from '../loginbuttons/loginbutton'
+import LogoutButton from '../loginbuttons/logoutbutton';
+import LoginButton from '../loginbuttons/loginbutton';
+import './Islogged.css'
+
 
 class Islogged extends React.Component {
 
@@ -30,8 +32,18 @@ class Islogged extends React.Component {
 
     render() {
         if (this.state.isLoggedIn) {
+            let classValue1 = "loginheader1"
+            let classValue2 = "loginheader2"
+            return (
+            <div>
+              
+                {
+                // 5>4 &&  <h1 className={classValue1}>Login Action</h1>
+                5>4? <h1 className={classValue1}>Login Action</h1>:<h1 className={classValue2}>Login Action</h1>
+                }
 
-            return (<div>
+
+
                 <Loginuser></Loginuser>
                 <LogoutButton onClick={this.userLogIn}></LogoutButton>
             </div>
@@ -49,3 +61,7 @@ class Islogged extends React.Component {
 }
 
 export default Islogged;
+
+
+
+// forms,fragments,childrens,higher order components,ref

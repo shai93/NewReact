@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import './App.css';
-import Islogged from './components/login/Islogged';
+import Example from './components/examples/example';
+// composition
 
-
-class App extends Component {
+class App extends React.Component {
 
   render() {
     
     return (
       <div className="App">
-        <Islogged></Islogged>
+      <Example/>
       </div>
     );
   }
