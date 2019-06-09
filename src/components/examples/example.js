@@ -1,56 +1,20 @@
 import React from 'react';
-
-// context - pass data directly to the child in component tree
-
-
-const MyContext = React.createContext()
-
-//Provider and consumer
-
-const Child = (props) => {
-    return <Subchild />
-}
-
-
-
-const Subchild = (props) => {
-    return (
-        <MyContext.Consumer>
-            {
-                (context) => (
-                    <button onClick={()=>{context()}}>Add Counter</button>
-                )
-
-            }
-        </MyContext.Consumer>
-    )
-}
-
+import Higher from '../Higher';
 
 class Example extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            'counter': 0
-        }
-    }
-
-    handleCounter = (event) => {
-        this.setState({
-            'counter': this.state.counter + 1
-        })
-    }
-
     render() {
+        console.log("in example", this.props)
+        const {text, handleCount } = this.props
         return (
-            <MyContext.Provider value={this.handleCounter}>
-                <p>Counter is: - {this.state.counter}</p>
-                <Child />
-            </MyContext.Provider>
+            <React.Fragment>
+                    <h2>{text}}</h2>
+                    <button onClick={this.props.handleCount}>Clicked {this.props.count}  times!!!!</button>
+            </React.Fragment>
         )
     }
-
 }
 
-export default Example;
+export default Higher(Example)
+
+
